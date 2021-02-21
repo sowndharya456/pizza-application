@@ -173,55 +173,59 @@ class Home extends Component {
             totalCartQuantity={this.state.totalCartQuantity}
           />
         </div>
-        <div className="filterclass">
-          <Grid item>
-            <ToggleButtonGroup
-              size="small"
-              value={this.alignment}
-              exclusive
-              onChange={this.handleChange}
-            >
-              <ToggleButton
-                value="ALL"
-                onClick={() => this.filterByTypeHandler("ALL")}
-              >
-                ALL
-              </ToggleButton>
-              <ToggleButton
-                value="VEG"
-                onClick={() => this.filterByTypeHandler("VEG")}
-              >
-                VEG
-              </ToggleButton>
-              <ToggleButton
-                value="NONVEG"
-                onClick={() => this.filterByTypeHandler("NONVEG")} >
-                NONVEG
-              </ToggleButton>
-            </ToggleButtonGroup>
-              <Button
-                variant="contained"
-                color="primary" onClick={() => this.sortPizzaHandler("Rating")}>
-                Sort By Rating
-              </Button>
-              <Button
-                variant="contained"
-                color="primary" onClick={() => this.sortPizzaHandler("Price")}>
-                Sort By Price
-              </Button>
-           
-          </Grid>
-        </div>
+        
         <div className="mainclass">
+          
           {this.state.viewType === "product" ? (
+            <div>
+             <div className="filterclass">
+             <Grid item>
+               <ToggleButtonGroup
+                 size="small"
+                 value={this.alignment}
+                 exclusive
+                 onChange={this.handleChange}
+               >
+                 <ToggleButton
+                   value="ALL"
+                   onClick={() => this.filterByTypeHandler("ALL")}
+                 >
+                   ALL
+                 </ToggleButton>
+                 <ToggleButton
+                   value="VEG"
+                   onClick={() => this.filterByTypeHandler("VEG")}
+                 >
+                   VEG
+                 </ToggleButton>
+                 <ToggleButton
+                   value="NONVEG"
+                   onClick={() => this.filterByTypeHandler("NONVEG")} >
+                   NONVEG
+                 </ToggleButton>
+               </ToggleButtonGroup>
+                 <Button
+                   variant="contained"
+                   color="primary" onClick={() => this.sortPizzaHandler("Rating")}>
+                   Sort By Rating
+                 </Button>
+                 <Button
+                   variant="contained"
+                   color="primary" onClick={() => this.sortPizzaHandler("Price")}>
+                   Sort By Price
+                 </Button>
+              
+             </Grid>
+           </div>
             <PizzaMenu
               pizzalist={this.state.displaylist}
               cartlist={this.state.cartlist}
               addToCart={this.addItemToCart}
               removeFromCart={this.removeItemFromCart}
             />
+            </div>
           ) : (
-            <div>
+            <div class="checkoutContainer">
               <Checkout
                 cartlist={this.state.cartlist}
                 totalPrice={this.state.totalPrice}
@@ -231,7 +235,6 @@ class Home extends Component {
             </div>
           )}
         </div>
-
         <div className="footerclass">
           <Footer />
         </div>

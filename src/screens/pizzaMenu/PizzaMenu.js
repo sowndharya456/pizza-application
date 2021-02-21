@@ -31,7 +31,8 @@ import Icon from "@material-ui/core/Icon";
 const useStyles = theme => ({
   root: {
     flexGrow: 1,
-    padding: "20px"
+    padding: '5%',
+
   },
   paper: {
     padding: theme.spacing(1),
@@ -42,7 +43,7 @@ const useStyles = theme => ({
     maxWidth: 345
   },
   media: {
-    height: 250
+    height: 200
   }
 });
 
@@ -96,7 +97,8 @@ class PizzaMenu extends Component {
       return (
         <Button
           size="small"
-          color="primary"
+          variant="contained"
+          color="primary" 
           onClick={() => this.handleClickOpen(pizza)}
         >
           Add To Cart
@@ -184,44 +186,28 @@ class PizzaMenu extends Component {
                       title={pizza.name}
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {pizza.name}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        {pizza.description}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        <Icon
+                   
+                      <h2>
+                      <Icon
                           style={
                             pizza.isVeg === true
                               ? { color: "green", fontSize: "small" }
                               : { color: "red", fontSize: "small" }
                           } >
                           <FiberManualRecordIcon />
-                          {pizza.isVeg === true ? "Veg" : "Non Veg"}
-                        </Icon>
-                      </Typography>
+                        </Icon> {pizza.name}
+                      </h2>
+                      <div style={{height: '30px', overflow: 'hidden',  paddingBottom: '5px'} }>
+                        {pizza.description}
+                      </div>
                       <div>
-                          <Box
-                            component="fieldset"
-                            mb={3}
-                            borderColor="transparent">
-                            <Typography component="legend">Rating</Typography>
                             <Rating
                               name="read-only"
                               value={pizza.rating}
                               precision={0.5}
+                              size="small"
                               readOnly
                             />
-                          </Box>
                         
                         <Typography
                           variant="body2"
@@ -232,16 +218,17 @@ class PizzaMenu extends Component {
                         </Typography>
                       </div>
                     </CardContent>
+
                   </CardActionArea>
                   <CardActions>
-                    <IconButton onClick={() => this.props.addToCart(pizza)}>
-                      <AddIcon />
+                    <IconButton  onClick={() => this.props.addToCart(pizza)}>
+                      <AddIcon style={ {fontSize:'small'}} />
                     </IconButton>
                     {this.showActions(pizza)}
                     <IconButton
                       onClick={() => this.props.removeFromCart(pizza)}
                     >
-                      <RemoveIcon />
+                      <RemoveIcon style={ {fontSize:'small'}}  />
                     </IconButton>
                   </CardActions>
                 </Card>

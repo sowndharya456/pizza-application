@@ -14,7 +14,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 const useStyles = theme => ({
   root: {
-    minWidth: 275
+    minWidth: 275,
+    
   },
   bullet: {
     display: "inline-block",
@@ -124,7 +125,7 @@ class Checkout extends Component {
             )}
           </div>
 
-          <div>
+          <div class='finalCheckoutContainer'>
             <Card className={classes.root} variant="outlined">
               <CardContent>
                 <Typography variant="h5" component="h2">

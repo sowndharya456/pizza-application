@@ -31,9 +31,6 @@ class Footer extends Component {
               >
                 Contact us
               </Typography>
-              <Typography variant="h6" className={classes.title}>
-                Facebook
-              </Typography>
             </Toolbar>
           </AppBar>
         </div>

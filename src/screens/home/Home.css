@@ -1,9 +1,33 @@
 .homeclass{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+
+    height: 100%;
+    width: 100%;
 }
 .filterclass{
-  
-    padding: 10px;
+    height: 10%;
+    padding-left: 5%;
+    padding-top:  6%;
+}
+
+.mainclass {
+    height: 70%;
+}
+
+.headerclass {
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.footerclass {
+    height: 8%;
+    width: 100%;
+    bottom:0;
+    position: fixed;
+}
+
+.checkoutContainer {
+    padding-top: 6%;
+    padding-left: 5%;
 }

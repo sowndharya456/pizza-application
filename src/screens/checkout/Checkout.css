@@ -1,4 +1,8 @@
 .listingCartItems{
     padding:10px;
+    width: 40%;
 }
 
+.finalCheckoutContainer {
+    width: 50%;
+}
